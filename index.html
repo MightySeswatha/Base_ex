@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
   <link rel="stylesheet" href="styles/style.css">
-  <link rel="stylesheet" href="styles/relative.css">
+  <link rel="stylesheet" href="styles/responsive.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="scripts/main.js"></script>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="scripts/script.js"></script>
   <script src="scripts/ajax.js"></script>
   <title>Base_ex</title>
 </head>
@@ -23,7 +24,7 @@
       <div id="popup_close">
         <img src="images/popup_close.svg">
       </div>
-      <h1>SUCCESS!</h1>
+      <h1 id="wdh_result_form"></h1>
       <p>You have successfully subscribed to the email newsletter</p>
       <button id="btn_popup">Close</button>
     </div>
@@ -31,6 +32,7 @@
 
   <div class="main_back1"></div>
   <div class="main_back2"></div>
+
 
   <main>
 
@@ -48,28 +50,28 @@
       <div class="time_block">
         <div class="time_num"></div>
         <div class="time_desc">
-          <div class="time_inner_desc">Days</div>
+          <div class="time_inner_desc"></div>
         </div>
       </div>
       <div class="time_twopoint">:</div>
       <div class="time_block">
         <div class="time_num"></div>
         <div class="time_desc">
-          <div class="time_inner_desc">Hours</div>
+          <div class="time_inner_desc"></div>
         </div>
       </div>
       <div class="time_twopoint">:</div>
       <div class="time_block">
         <div class="time_num"></div>
         <div class="time_desc">
-          <div class="time_inner_desc">Minutes</div>
+          <div class="time_inner_desc"></div>
         </div>
       </div>
       <div class="time_twopoint">:</div>
       <div class="time_block">
         <div class="time_num"></div>
         <div class="time_desc">
-          <div class="time_inner_desc">Seconds</div>
+          <div class="time_inner_desc"></div>
         </div>
       </div>
     </div>
@@ -84,13 +86,273 @@
   <footer>
     <div class="inner_footer">
       <form method="post" class="log_inp" id="ajax_form" action="">
-        <input placeholder="Enter your Email and get notified" type="email" id="email">
+        <input placeholder="Enter your Email and get notified" type="email" name="email" id="email">
         <button type="submit" class="log_btn" id="log_btn">
           <img src="images/arrow-right.svg">
         </button>
       </form>
     </div>
+
+    <div class="btn_event">
+      <a href="#download">Other Events</a>
+      <img src="images/fi_arrow-down.svg">
+    </div>
+
   </footer>
+
+  <div class="all_event">
+    <div class="title2" id="download">ALL EVENTS</div>
+
+    <div class="row">
+      <div class="line_block">
+        <div class="active"></div>
+        <div class="line_num">01</div>
+        <div class="line_text">Hawaiian party</div>
+      </div>
+      <!---->
+      <div class="line_desc">
+        <div class="line_inner_desc">
+          <div class="line_inner_desc_back">
+            <a href="https://github.com/MightySeswatha">More information</a>
+            <p>13.02.2023</p>
+            <h1>Hawaiian party</h1>
+          </div>
+        </div>
+      </div>
+      <!---->
+      <div class="line_block">
+        <div class="line_block_back"></div>
+        <div class="line_num">02</div>
+        <div class="line_text">Мafia party</div>
+      </div>
+      <!---->
+      <div class="line_desc" id="off">
+        <div class="line_inner_desc">
+          <div class="line_inner_desc_back">
+            <a href="https://github.com/MightySeswatha">More information</a>
+            <p>13.02.2023</p>
+            <h1>Мafia party</h1>
+          </div>
+        </div>
+      </div>
+      <!---->
+      <div class="line_block">
+        <div class="line_block_back"></div>
+        <div class="line_num">03</div>
+        <div class="line_text">Party</div>
+      </div>
+      <!---->
+      <div class="line_desc" id="off">
+        <div class="line_inner_desc">
+          <div class="line_inner_desc_back">
+            <a href="https://github.com/MightySeswatha">More information</a>
+            <p>13.02.2023</p>
+            <h1>Party</h1>
+          </div>
+        </div>
+      </div>
+      <!---->
+      <div class="line_block">
+        <div class="line_block_back"></div>
+        <div class="line_num">04</div>
+        <div class="line_text">Party on the beach</div>
+      </div>
+      <!---->
+      <div class="line_desc" id="off">
+        <div class="line_inner_desc">
+          <div class="line_inner_desc_back">
+            <a href="https://github.com/MightySeswatha">More information</a>
+            <p>13.02.2023</p>
+            <h1>Party on the beach</h1>
+          </div>
+        </div>
+      </div>
+      <!---->
+      <div class="line_block">
+        <div class="line_block_back"></div>
+        <div class="line_num">05</div>
+        <div class="line_text">Home Security</div>
+      </div>
+      <!---->
+      <div class="line_desc" id="off">
+        <div class="line_inner_desc">
+          <div class="line_inner_desc_back">
+            <a href="https://github.com/MightySeswatha">More information</a>
+            <p>13.02.2023</p>
+            <h1>Home Security</h1>
+          </div>
+        </div>
+      </div>
+      <!---->
+      <div class="line_block">
+        <div class="line_block_back"></div>
+        <div class="line_num">06</div>
+        <div class="line_text">Network Design & Implementation</div>
+      </div>
+      <!---->
+      <div class="line_desc" id="off">
+        <div class="line_inner_desc">
+          <div class="line_inner_desc_back">
+            <a href="https://github.com/MightySeswatha">More information</a>
+            <p>13.02.2023</p>
+            <h1>Network Design & Implementation</h1>
+          </div>
+        </div>
+      </div>
+      <!---->
+      <div class="line_block">
+        <div class="line_block_back"></div>
+        <div class="line_num">07</div>
+        <div class="line_text">System Design & Engineering</div>
+      </div>
+      <!---->
+      <div class="line_desc" id="off">
+        <div class="line_inner_desc">
+          <div class="line_inner_desc_back">
+            <a href="https://github.com/MightySeswatha">More information</a>
+            <p>13.02.2023</p>
+            <h1>System Design & Engineering</h1>
+          </div>
+        </div>
+      </div>
+      <!---->
+      <div class="line_block">
+        <div class="line_block_back"></div>
+        <div class="line_num">08</div>
+        <div class="line_text">Client Care Plans</div>
+      </div>
+      <!---->
+      <div class="line_desc" id="off">
+        <div class="line_inner_desc">
+          <div class="line_inner_desc_back">
+            <a href="https://github.com/MightySeswatha">More information</a>
+            <p>13.02.2023</p>
+            <h1>Client Care Plans</h1>
+          </div>
+        </div>
+      </div>
+      <!---->
+    </div>
+
+
+    <!--Second row-->
+    <div class="row" id="off">
+
+      <div class="line_desc">
+        <div class="line_inner_desc">
+          <div class="line_inner_desc_back">
+            <a href="https://github.com/MightySeswatha">More information</a>
+            <p>13.02.2023</p>
+            <h1>Meeting</h1>
+          </div>
+        </div>
+      </div>
+      <div class="line_block">
+        <div class="active"></div>
+        <div class="line_num">01</div>
+        <div class="line_text">Meeting</div>
+      </div>
+      <div class="line_desc" id="off">
+        <div class="line_inner_desc">
+          <div class="line_inner_desc_back">
+            <a href="https://github.com/MightySeswatha">More information</a>
+            <p>13.02.2023</p>
+            <h1>Meeting</h1>
+          </div>
+        </div>
+      </div>
+      <div class="line_block">
+        <div class="line_block_back"></div>
+        <div class="line_num">02</div>
+        <div class="line_text">Meeting</div>
+      </div>
+      <div class="line_desc" id="off">
+        <div class="line_inner_desc">
+          <div class="line_inner_desc_back">
+            <a href="https://github.com/MightySeswatha">More information</a>
+            <p>13.02.2023</p>
+            <h1>Party</h1>
+          </div>
+        </div>
+      </div>
+      <div class="line_block">
+        <div class="line_block_back"></div>
+        <div class="line_num">03</div>
+        <div class="line_text">Party</div>
+      </div>
+      <div class="line_desc" id="off">
+        <div class="line_inner_desc">
+          <div class="line_inner_desc_back">
+            <a href="https://github.com/MightySeswatha">More information</a>
+            <p>13.02.2023</p>
+            <h1>Party on the beach</h1>
+          </div>
+        </div>
+      </div>
+      <div class="line_block">
+        <div class="line_block_back"></div>
+        <div class="line_num">04</div>
+        <div class="line_text">Party on the beach</div>
+      </div>
+      <div class="line_desc" id="off">
+        <div class="line_inner_desc">
+          <div class="line_inner_desc_back">
+            <a href="https://github.com/MightySeswatha">More information</a>
+            <p>13.02.2023</p>
+            <h1>Home Security</h1>
+          </div>
+        </div>
+      </div>
+      <div class="line_block">
+        <div class="line_block_back"></div>
+        <div class="line_num">05</div>
+        <div class="line_text">Home Security</div>
+      </div>
+      <div class="line_desc" id="off">
+        <div class="line_inner_desc">
+          <div class="line_inner_desc_back">
+            <a href="https://github.com/MightySeswatha">More information</a>
+            <p>13.02.2023</p>
+            <h1>Network Design & Implementation</h1>
+          </div>
+        </div>
+      </div>
+      <div class="line_block">
+        <div class="line_block_back"></div>
+        <div class="line_num">06</div>
+        <div class="line_text">Network Design & Implementation</div>
+      </div>
+      <div class="line_desc" id="off">
+        <div class="line_inner_desc">
+          <div class="line_inner_desc_back">
+            <a href="https://github.com/MightySeswatha">More information</a>
+            <p>13.02.2023</p>
+            <h1>System Design & Engineering</h1>
+          </div>
+        </div>
+      </div>
+      <div class="line_block">
+        <div class="line_block_back"></div>
+        <div class="line_num">07</div>
+        <div class="line_text">System Design & Engineering</div>
+      </div>
+      <div class="line_desc" id="off">
+        <div class="line_inner_desc">
+          <div class="line_inner_desc_back">
+            <a href="https://github.com/MightySeswatha">More information</a>
+            <p>13.02.2023</p>
+            <h1>Client Care Plans</h1>
+          </div>
+        </div>
+      </div>
+      <div class="line_block">
+        <div class="line_block_back"></div>
+        <div class="line_num">08</div>
+        <div class="line_text">Client Care Plans</div>
+      </div>
+    </div>
+
+  </div>
 
 </body>
 

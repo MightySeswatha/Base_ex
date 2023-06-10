@@ -1,5 +1,32 @@
 window.onload = () => {
 
+    /*Resize window*/
+    function resize() {
+        var time_inner_desc = document.getElementsByClassName("time_inner_desc");
+        var row = document.getElementsByClassName("row");
+        if (window.innerWidth < 1024) {
+            row[0].setAttribute("id", "off");
+            row[1].removeAttribute("id");
+        }
+        else {
+            row[0].removeAttribute("id");
+            row[1].setAttribute("id", "off");
+        }
+        if (window.innerWidth <= 768) {
+            time_inner_desc[0].innerHTML = "DD";
+            time_inner_desc[1].innerHTML = "HH";
+            time_inner_desc[2].innerHTML = "MM";
+            time_inner_desc[3].innerHTML = "SS";
+        }
+        else {
+            time_inner_desc[0].innerHTML = "Days";
+            time_inner_desc[1].innerHTML = "Hours";
+            time_inner_desc[2].innerHTML = "Minutes";
+            time_inner_desc[3].innerHTML = "Seconds";
+        }
+    }
+    resize();
+    window.onresize = () => resize();
     /*Timer*/
     const countdown = new Date(2023, 6, 24, 0, 0, 0, 0);
     var time_num = document.getElementsByClassName("time_num");
@@ -58,6 +85,55 @@ window.onload = () => {
     btn_popup.onclick = () => {
         back[0].setAttribute("id", "off");
     }
+    /**/
+
+    /*Animation*/
+    var line_block = document.getElementsByClassName("line_block");
+    var line_desc = document.getElementsByClassName("line_desc");
+
+    for (let elem of line_block) {
+        elem.onclick = () => {
+            var k = [...line_block].indexOf(elem);
+            elem.children[0].removeAttribute("class");
+            elem.children[0].setAttribute("class", "active");
+            line_desc[k].removeAttribute("id");
+            animation(line_desc[k]);
+
+            for (let i = 0; i < line_block.length; i++) {
+                if (line_block[i] != elem) {
+                    line_block[i].children[0].removeAttribute("class");
+                    line_block[i].children[0].setAttribute("class", "line_block_back")
+                    line_desc[i].setAttribute("id", "off");
+                }
+            }
+        }
+    }
+
+    function animation(obj) {
+
+        if (window.innerWidth >= 1024) {
+            obj.children[0].style.left = 70 + "%";
+
+            function change(from, to) {
+                let current = from;
+
+                let timerId = setInterval(function () {
+                    obj.children[0].style.left = current + "%";
+                    if (current == to) {
+                        clearInterval(timerId);
+                    }
+                    current--;
+                }, 10);
+            }
+
+            change(70, 0);
+        }
+
+        else {
+        }
+
+    }
+
     /**/
 
 }
